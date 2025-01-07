@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const markers = [
   {
-    top: "30.95%",
+    top: "29.3%",
     left: "45.1%",
     country: "Ireland",
     address:
@@ -11,7 +11,7 @@ const markers = [
     link: "https://tsl-projects.webflow.io/countries/ireland",
   },
   {
-    top: "38.79%",
+    top: "36.5%",
     left: "13.7%",
     country: "USA",
     address:
@@ -20,7 +20,7 @@ const markers = [
     link: "https://tsl-projects.webflow.io/countries/north-america",
   },
   {
-    top: "36.1%",
+    top: "33.5%",
     left: "25.5%",
     country: "Canada",
     address: "TSL Inc. Toronto\n3509 Mainway\nBurlington\nON L7M 1A9\nCanada",
@@ -28,7 +28,7 @@ const markers = [
     link: "https://tsl-projects.webflow.io/countries/north-america",
   },
   {
-    top: "30.95%",
+    top: "29.3%",
     left: "47.7%",
     country: "United Kingdom",
     address:
@@ -37,7 +37,7 @@ const markers = [
     link: "https://tsl-projects.webflow.io/countries/united-kingdom",
   },
   {
-    top: "29.6%",
+    top: "28%",
     left: "50.3%",
     country: "Netherland",
     address:
@@ -46,8 +46,8 @@ const markers = [
     link: "https://tsl-projects.webflow.io/countries/netherlands-belgium",
   },
   {
-    top: "29.6%",
-    left: "50.3%",
+    top: "28.8%",
+    left: "49.6%",
     country: "Belgium",
     address:
       "TSL Projects BV\n Da Vincilaan 2\n1930 Zaventem\nCorporate Village Diegem\nBrussels\nBelgium",
@@ -55,7 +55,7 @@ const markers = [
     link: "https://tsl-projects.webflow.io/countries/netherlands-belgium",
   },
   {
-    top: "31.6%",
+    top: "30%",
     left: "53.6%",
     country: "Poland",
     address:
@@ -64,7 +64,7 @@ const markers = [
     link: "https://tsl-projects.webflow.io/countries/poland",
   },
   {
-    top: "32.2%",
+    top: "30.8%",
     left: "51.6%",
     country: "Germany",
     address:
@@ -73,15 +73,15 @@ const markers = [
     link: "https://tsl-projects.webflow.io/countries/germany",
   },
   {
-    top: "38.1%",
-    left: "47.1%",
+    top: "37.2%",
+    left: "47%",
     country: "Spain",
     address: "TSL SL\nBahía de Pollensa 5-7\n28042\nMadrid\nSpain",
     phoneNumber: "+34 91 340 44 66",
     link: "https://tsl-projects.webflow.io/countries/spain",
   },
   {
-    top: "75.8%",
+    top: "77%",
     left: "90.2%",
     country: "APAC",
     address:
