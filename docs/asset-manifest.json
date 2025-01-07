@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/interactive-map/static/css/main.bacec1e1.css",
+    "main.js": "/interactive-map/static/js/main.287813ab.js",
+    "static/js/453.3399c7bd.chunk.js": "/interactive-map/static/js/453.3399c7bd.chunk.js",
+    "index.html": "/interactive-map/index.html",
+    "main.bacec1e1.css.map": "/interactive-map/static/css/main.bacec1e1.css.map",
+    "main.287813ab.js.map": "/interactive-map/static/js/main.287813ab.js.map",
+    "453.3399c7bd.chunk.js.map": "/interactive-map/static/js/453.3399c7bd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bacec1e1.css",
+    "static/js/main.287813ab.js"
+  ]
+}
