@@ -1,15 +1,10 @@
-// src/Map.js
 import React, { useState } from "react";
-
-import "./Map.css";
-
-// Note: Add this to public/index.html in the <head> section:
 
 const markers = [
   {
     top: "30.95%",
     left: "45.1%",
-    country: "Ireland", 
+    country: "Ireland",
     address:
       "TSL Projects Ltd.\n Maynooth\nUnit F11\nMaynooth Business Campus\n Straffan Road\nMaynooth\nCo Kildare\nW23 HR64",
     phoneNumber: "+353 (0) 1 253 7020",
@@ -19,7 +14,8 @@ const markers = [
     top: "38.79%",
     left: "13.7%",
     country: "USA",
-    address: "TSL Inc. California\n1508 Eureka Road\nSuite 190\nRoseville\nCA 95661\nUSA",
+    address:
+      "TSL Inc. California\n1508 Eureka Road\nSuite 190\nRoseville\nCA 95661\nUSA",
     phoneNumber: "+1 382-342-2676",
     link: "https://tsl-projects.webflow.io/countries/north-america",
   },
@@ -35,7 +31,8 @@ const markers = [
     top: "30.95%",
     left: "47.7%",
     country: "United Kingdom",
-    address: "TSL Ltd. UK\nChalfont Park House\nChalfont Park\nGerrards Cross\nBuckinghamshire\nSL9 0DZ",
+    address:
+      "TSL Ltd. UK\nChalfont Park House\nChalfont Park\nGerrards Cross\nBuckinghamshire\nSL9 0DZ",
     phoneNumber: "+44 (0) 845 330 7311",
     link: "https://tsl-projects.webflow.io/countries/united-kingdom",
   },
@@ -43,7 +40,8 @@ const markers = [
     top: "29.6%",
     left: "50.3%",
     country: "Netherland",
-    address: "TSL BV\nSouth Point Offices 2 – Gebouw B\nScorpius 116\n2132LR\nHoofddorp\nNetherlands",
+    address:
+      "TSL BV\nSouth Point Offices 2 – Gebouw B\nScorpius 116\n2132LR\nHoofddorp\nNetherlands",
     phoneNumber: "+31 625 240 204",
     link: "https://tsl-projects.webflow.io/countries/netherlands-belgium",
   },
@@ -51,7 +49,8 @@ const markers = [
     top: "29.6%",
     left: "50.3%",
     country: "Belgium",
-    address: "TSL Projects BV\n Da Vincilaan 2\n1930 Zaventem\nCorporate Village Diegem\nBrussels\nBelgium",
+    address:
+      "TSL Projects BV\n Da Vincilaan 2\n1930 Zaventem\nCorporate Village Diegem\nBrussels\nBelgium",
     phoneNumber: "+31 625 240 204",
     link: "https://tsl-projects.webflow.io/countries/netherlands-belgium",
   },
@@ -59,7 +58,8 @@ const markers = [
     top: "31.6%",
     left: "53.6%",
     country: "Poland",
-    address: "TSL Sp. z o. o.\nFirst Floor\nG43 Office Centre\nGrzybowska 43\n00-855 Warsaw\nMazowieckie\nPoland",
+    address:
+      "TSL Sp. z o. o.\nFirst Floor\nG43 Office Centre\nGrzybowska 43\n00-855 Warsaw\nMazowieckie\nPoland",
     phoneNumber: "+48 (0) 503 940 490",
     link: "https://tsl-projects.webflow.io/countries/poland",
   },
@@ -67,7 +67,8 @@ const markers = [
     top: "32.2%",
     left: "51.6%",
     country: "Germany",
-    address: "TSL GmbH Frankfurt\nGeorg-Baumgarten-Strasse 3\n60549 Frankfurt am Main\nGermany",
+    address:
+      "TSL GmbH Frankfurt\nGeorg-Baumgarten-Strasse 3\n60549 Frankfurt am Main\nGermany",
     phoneNumber: "+49 (0) 931 404 5040",
     link: "https://tsl-projects.webflow.io/countries/germany",
   },
@@ -83,7 +84,8 @@ const markers = [
     top: "75.8%",
     left: "90.2%",
     country: "APAC",
-    address: "TSL Australia Pty Ltd\nOffice 529, Level 5\n7 Eden Park Drive\nMacquarie Park\nNorth Ryde\nSydney\nNew South Wales, 2113, Australia",
+    address:
+      "TSL Australia Pty Ltd\nOffice 529, Level 5\n7 Eden Park Drive\nMacquarie Park\nNorth Ryde\nSydney\nNew South Wales, 2113, Australia",
     phoneNumber: "+44 (0) 845 330 7311",
     link: "https://tsl-projects.webflow.io/countries/apac",
   },
@@ -91,6 +93,24 @@ const markers = [
 
 const Map = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const containerRef = React.useRef(null);
+
+  React.useEffect(() => {
+    const updateDimensions = () => {
+      if (containerRef.current) {
+        setDimensions({
+          width: containerRef.current.offsetWidth,
+          height: containerRef.current.offsetHeight,
+        });
+      }
+    };
+
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
 
   const handleClick = (link) => {
     if (window.parent) {
@@ -98,9 +118,51 @@ const Map = () => {
     }
   };
 
+  // Calculate marker size based on container width
+  const getMarkerSize = () => {
+    const baseWidth = 10;
+    const baseHeight = 8;
+    const minWidth = 6;
+    const minHeight = 5;
+
+    if (!dimensions.width) return { width: baseWidth, height: baseHeight };
+
+    // Scale down markers based on screen width
+    const scale = Math.max(dimensions.width / 1200, 0.5); // 1200px is base width, won't scale larger than 1x
+
+    return {
+      width: Math.max(baseWidth * scale, minWidth),
+      height: Math.max(baseHeight * scale, minHeight),
+    };
+  };
+
+  const markerSize = getMarkerSize();
+
   return (
-    <div className="map-container" style={{ fontFamily: "'Figtree', sans-serif" }}>
-      <img src="https://cdn.prod.website-files.com/66601eaee08e4e52a8909fb4/677d3c601f83797808cf72a6_map.jpg" alt="World Map" className="map-image" />
+    <div
+      ref={containerRef}
+      className="map-container"
+      style={{
+        fontFamily: "'Figtree', sans-serif",
+        maxWidth: "100%",
+        margin: "0 auto",
+        position: "relative",
+        width: "100%",
+        paddingBottom: "50%",
+      }}
+    >
+      <img
+        src="https://cdn.prod.website-files.com/66601eaee08e4e52a8909fb4/677d3c601f83797808cf72a6_map.jpg"
+        alt="World Map"
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          objectFit: "cover",
+        }}
+      />
       {markers.map((marker, index) => (
         <div key={index}>
           {hoveredIndex === index && (
@@ -108,34 +170,57 @@ const Map = () => {
               className="tooltip"
               style={{
                 position: "absolute",
-                top: `calc(${marker.top} - 130px)`,
+                top: marker.top,
                 left: marker.left,
-                transform: "translateX(-50%)",
-                fontFamily: "'Figtree', sans-serif"
+                transform: "translate(-50%, -130px)",
+                fontFamily: "'Figtree', sans-serif",
+                backgroundColor: "white",
+                color: "black",
+                padding: "8px",
+                borderRadius: "4px",
+                zIndex: 1000,
+                boxShadow: "0 1px 4px rgba(0,0,0,0.2)",
+                width: "200px",
+                height: "auto",
               }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div style={{ marginBottom: '12px' }}>
-                <strong style={{ fontSize: '1.2em' }}>{marker.country}</strong>
+              <div style={{ marginBottom: "8px" }}>
+                <strong style={{ fontSize: "1em" }}>{marker.country}</strong>
               </div>
-              <div style={{ color: '#666666', fontSize: '0.9em', marginBottom: '12px' }}>
-                {marker.address.split('\n').map((line, i) => (
+              <div
+                style={{
+                  color: "#666666",
+                  fontSize: "0.8em",
+                  marginBottom: "8px",
+                }}
+              >
+                {marker.address.split("\n").map((line, i) => (
                   <div key={i}>{line}</div>
                 ))}
               </div>
-              <div style={{ color: '#7861e3', marginBottom: '24px' }}>{marker.phoneNumber}</div>
+              <div
+                style={{
+                  color: "#7861e3",
+                  fontSize: "0.9em",
+                  marginBottom: "16px",
+                }}
+              >
+                {marker.phoneNumber}
+              </div>
               <button
                 onClick={() => handleClick(marker.link)}
                 style={{
-                  backgroundColor: '#7861e3',
-                  color: 'white',
-                  border: 'none',
-                  padding: '8px 16px',
-                  cursor: 'pointer',
-                  borderRadius: '0',
-                  fontWeight: '600',
-                  fontFamily: "'Figtree', sans-serif"
+                  backgroundColor: "#7861e3",
+                  color: "white",
+                  border: "none",
+                  padding: "6px 12px",
+                  cursor: "pointer",
+                  borderRadius: "0",
+                  fontWeight: "600",
+                  fontSize: "0.9em",
+                  fontFamily: "'Figtree', sans-serif",
                 }}
               >
                 Find out more
@@ -144,7 +229,18 @@ const Map = () => {
           )}
           <div
             className="marker"
-            style={{ top: marker.top, left: marker.left }}
+            style={{
+              position: "absolute",
+              top: marker.top,
+              left: marker.left,
+              backgroundColor: "#7861e3",
+              width: `${markerSize.width}px`,
+              height: `${markerSize.height}px`,
+              clipPath:
+                "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+              transform: "translate(-50%, -50%)",
+              cursor: "pointer",
+            }}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
             onClick={() => handleClick(marker.link)}
