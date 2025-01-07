@@ -100,7 +100,7 @@ const Map = () => {
 
   return (
     <div className="map-container" style={{ fontFamily: "'Figtree', sans-serif" }}>
-      <img src="/map.jpg" alt="World Map" className="map-image" />
+      <img src="https://cdn.prod.website-files.com/66601eaee08e4e52a8909fb4/677d3c601f83797808cf72a6_map.jpg" alt="World Map" className="map-image" />
       {markers.map((marker, index) => (
         <div key={index}>
           {hoveredIndex === index && (
