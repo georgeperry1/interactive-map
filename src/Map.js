@@ -11,8 +11,8 @@ const markers = [
     link: "https://tsl-projects.webflow.io/countries/ireland",
   },
   {
-    top: "36.5%",
-    left: "13.7%",
+    top: "44.3%",
+    left: "19.6%",
     country: "USA",
     address:
       "TSL Inc. California\n1508 Eureka Road\nSuite 190\nRoseville\nCA 95661\nUSA",
@@ -39,7 +39,7 @@ const markers = [
   {
     top: "28%",
     left: "50.3%",
-    country: "Netherland",
+    country: "Netherlands",
     address:
       "TSL BV\nSouth Point Offices 2 – Gebouw B\nScorpius 116\n2132LR\nHoofddorp\nNetherlands",
     phoneNumber: "+31 625 240 204",
@@ -75,10 +75,19 @@ const markers = [
   {
     top: "37.2%",
     left: "47%",
-    country: "Spain",
+    country: "Spain & Portugal",
     address: "TSL SL\nBahía de Pollensa 5-7\n28042\nMadrid\nSpain",
     phoneNumber: "+34 91 340 44 66",
-    link: "https://tsl-projects.webflow.io/countries/spain",
+    link: "https://tsl-projects.webflow.io/countries/spain-portugal",
+  },
+  {
+    top: "37.2%",
+    left: "45.7%",
+    country: "Portugal",
+    address:
+      "Av. D. João II,\nLote 1.07.2.1,\nPiso 0,\n1990-096 Lisboa -Parque das Nações",
+    phoneNumber: "",
+    link: "https://tsl-projects.webflow.io/countries/spain-portugal",
   },
   {
     top: "77%",
@@ -182,6 +191,8 @@ const Map = () => {
                 boxShadow: "0 1px 4px rgba(0,0,0,0.2)",
                 width: "200px",
                 height: "auto",
+                opacity: 0,
+                animation: "fadeIn 0.3s ease-in forwards",
               }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
@@ -221,7 +232,10 @@ const Map = () => {
                   fontWeight: "600",
                   fontSize: "0.9em",
                   fontFamily: "'Figtree', sans-serif",
+                  transition: "transform 0.2s ease",
                 }}
+                onMouseEnter={(e) => e.target.style.transform = "scale(1.05)"}
+                onMouseLeave={(e) => e.target.style.transform = "scale(1)"}
               >
                 Find out more
               </button>
@@ -240,6 +254,11 @@ const Map = () => {
                 "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
               transform: "translate(-50%, -50%)",
               cursor: "pointer",
+              transition: "all 0.3s ease",
+              ...(hoveredIndex === index && {
+                transform: "translate(-50%, -50%) scale(1.5)",
+                boxShadow: "0 0 10px rgba(120, 97, 227, 0.5)",
+              }),
             }}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
@@ -247,6 +266,20 @@ const Map = () => {
           />
         </div>
       ))}
+      <style>
+        {`
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+              transform: translate(-50%, -120px);
+            }
+            to {
+              opacity: 1;
+              transform: translate(-50%, -130px);
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };
