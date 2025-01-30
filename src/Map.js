@@ -15,7 +15,7 @@ const markers = [
     left: "19.6%",
     country: "USA",
     address:
-      "TSL Inc. California\n1508 Eureka Road\nSuite 190\nRoseville\nCA 95661\nUSA",
+      "TSL Projects Inc,\n511 E John W Carpenter F Way,\n#409A\nIrving, Dallas\nTX 75062",
     phoneNumber: "+1 382-342-2676",
     link: "https://tsl-projects.webflow.io/countries/north-america",
   },
@@ -71,6 +71,15 @@ const markers = [
       "TSL GmbH Frankfurt\nGeorg-Baumgarten-Strasse 3\n60549 Frankfurt am Main\nGermany",
     phoneNumber: "+49 (0) 931 404 5040",
     link: "https://tsl-projects.webflow.io/countries/germany",
+  },
+  {
+    top: "33.5%",
+    left: "51.6%",
+    country: "Italy",
+    address:
+      "Office 203/205,\nRegus Segrate,\nSegreen Business Park,\nVia San Bovio 3 Segrate,\nSan Felice Milano,\n20054, Italy",
+    phoneNumber: "",
+    link: "https://tsl-projects.webflow.io/countries/italy",
   },
   {
     top: "37.2%",
