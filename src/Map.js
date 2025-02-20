@@ -69,7 +69,7 @@ const markers = [
     country: "Germany",
     address:
       "TSL GmbH Frankfurt\nGeorg-Baumgarten-Strasse 3\n60549 Frankfurt am Main\nGermany",
-    phoneNumber: "+49 (0) 931 404 5040",
+    phoneNumber: "+49 (0) 696 656 6374",
     link: "https://tsl-projects.webflow.io/countries/germany",
   },
   {
