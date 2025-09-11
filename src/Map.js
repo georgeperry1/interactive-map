@@ -8,7 +8,7 @@ const markers = [
     address:
       "TSL Projects Ltd.\n Maynooth\nUnit F11\nMaynooth Business Campus\n Straffan Road\nMaynooth\nCo Kildare\nW23 HR64",
     phoneNumber: "+353 (0) 1 253 7020",
-    link: "https://tsl-projects.webflow.io/countries/ireland",
+    link: "/countries/ireland",
   },
   {
     top: "44.3%",
@@ -17,7 +17,7 @@ const markers = [
     address:
       "TSL Projects Inc,\n511 E John W Carpenter F Way,\n#409A\nIrving, Dallas\nTX 75062",
     phoneNumber: "+1 382-342-2676",
-    link: "https://tsl-projects.webflow.io/countries/north-america",
+    link: "/countries/north-america",
   },
   {
     top: "33.5%",
@@ -25,7 +25,7 @@ const markers = [
     country: "Canada",
     address: "TSL Inc. Toronto\n3509 Mainway\nBurlington\nON L7M 1A9\nCanada",
     phoneNumber: "+1 382-342-2676",
-    link: "https://tsl-projects.webflow.io/countries/north-america",
+    link: "/countries/north-america",
   },
   {
     top: "29.3%",
@@ -34,7 +34,7 @@ const markers = [
     address:
       "TSL Ltd. UK\nChalfont Park House\nChalfont Park\nGerrards Cross\nBuckinghamshire\nSL9 0DZ",
     phoneNumber: "+44 (0) 845 330 7311",
-    link: "https://tsl-projects.webflow.io/countries/united-kingdom",
+    link: "/countries/united-kingdom",
   },
   {
     top: "28%",
@@ -43,7 +43,7 @@ const markers = [
     address:
       "TSL BV\nSouth Point Offices 2 – Gebouw B\nScorpius 116\n2132LR\nHoofddorp\nNetherlands",
     phoneNumber: "+31 625 240 204",
-    link: "https://tsl-projects.webflow.io/countries/netherlands-belgium",
+    link: "/countries/netherlands-belgium",
   },
   {
     top: "28.8%",
@@ -52,16 +52,16 @@ const markers = [
     address:
       "TSL Projects BV\n Da Vincilaan 2\n1930 Zaventem\nCorporate Village Diegem\nBrussels\nBelgium",
     phoneNumber: "+31 625 240 204",
-    link: "https://tsl-projects.webflow.io/countries/netherlands-belgium",
+    link: "/countries/netherlands-belgium",
   },
   {
-    top: "30%",
-    left: "53.6%",
+    top: "29.4%",
+    left: "54.2%",
     country: "Poland",
     address:
       "TSL Sp. z o. o.\nFirst Floor\nG43 Office Centre\nGrzybowska 43\n00-855 Warsaw\nMazowieckie\nPoland",
     phoneNumber: "+48 (0) 503 940 490",
-    link: "https://tsl-projects.webflow.io/countries/poland",
+    link: "/countries/poland",
   },
   {
     top: "30.8%",
@@ -70,7 +70,7 @@ const markers = [
     address:
       "TSL GmbH Frankfurt\nGeorg-Baumgarten-Strasse 3\n60549 Frankfurt am Main\nGermany",
     phoneNumber: "+49 (0) 696 656 6374",
-    link: "https://tsl-projects.webflow.io/countries/germany",
+    link: "/countries/germany",
   },
   {
     top: "33.5%",
@@ -79,15 +79,15 @@ const markers = [
     address:
       "Office 203/205,\nRegus Segrate,\nSegreen Business Park,\nVia San Bovio 3 Segrate,\nSan Felice Milano,\n20054, Italy",
     phoneNumber: "",
-    link: "https://tsl-projects.webflow.io/countries/italy",
+    link: "/countries/italy",
   },
   {
     top: "37.2%",
     left: "47%",
-    country: "Spain & Portugal",
+    country: "Spain",
     address: "TSL SL\nBahía de Pollensa 5-7\n28042\nMadrid\nSpain",
     phoneNumber: "+34 91 340 44 66",
-    link: "https://tsl-projects.webflow.io/countries/spain-portugal",
+    link: "/countries/spain",
   },
   {
     top: "37.2%",
@@ -96,7 +96,7 @@ const markers = [
     address:
       "Av. D. João II,\nLote 1.07.2.1,\nPiso 0,\n1990-096 Lisboa -Parque das Nações",
     phoneNumber: "",
-    link: "https://tsl-projects.webflow.io/countries/spain-portugal",
+    link: "/countries/portugal",
   },
   {
     top: "77%",
@@ -105,14 +105,48 @@ const markers = [
     address:
       "TSL Australia Pty Ltd\nOffice 529, Level 5\n7 Eden Park Drive\nMacquarie Park\nNorth Ryde\nSydney\nNew South Wales, 2113, Australia",
     phoneNumber: "+44 (0) 845 330 7311",
-    link: "https://tsl-projects.webflow.io/countries/apac",
+    link: "/countries/apac",
   },
+  {
+    top: "25%",
+    left: "53.0%",
+    country: "Sweden",
+    address: "TSL Sweden AB\nCO Spaces,\nHammarbybacken 27,\nJohanneshov,\nStockholm 120 30",
+    phoneNumber: "",
+    link: "/countries/sweden",
+  },
+  {
+    top: "26.5%",
+    left: "51.6%",
+    country: "Denmark",
+    address: "TSL Denmark ApS\nBusiness Centre Nord,\nLyngbyvej 20,\nCopenhagen 2100",
+    phoneNumber: "",
+    link: "/countries/denmark",
+  },
+  {
+    top: "23.7%",
+    left: "50.3%",
+    country: "Norway",
+    address: "TSL Norway AS\nInnovation Dock,\nRadhusgata 6,\n4306 Sandnes,\nNorway",
+    phoneNumber: "",
+    link: "/countries/norway",
+  }
+,
+  {
+    top: "30.8%",
+    left: "53%",
+    country: "Austria",
+    address: "TSL Austria GmbH\nOffice 2165, Spaces\nSquare One,\nLeopold Ungar Platz 2, 1.Stock - Stiege 2,\nVienna 1190\nAustria",
+    phoneNumber: "",
+    link: "/countries/austria",
+  }
 ];
 
 const Map = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const containerRef = React.useRef(null);
+  const isTouchRef = React.useRef(false);
 
   React.useEffect(() => {
     const updateDimensions = () => {
@@ -130,9 +164,13 @@ const Map = () => {
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
 
-  const handleClick = (link) => {
-    if (window.parent) {
-      window.parent.location.href = link;
+  const handleClick = (path) => {
+    // Prefer navigating the parent context so the parent origin resolves the path
+    try {
+      window.open(path, "_parent");
+    } catch {
+      // Fallback to same-context navigation
+      window.location.assign(path);
     }
   };
 
@@ -145,8 +183,8 @@ const Map = () => {
 
     if (!dimensions.width) return { width: baseWidth, height: baseHeight };
 
-    // Scale down markers based on screen width
-    const scale = Math.max(dimensions.width / 1200, 0.5); // 1200px is base width, won't scale larger than 1x
+    // Scale down markers based on screen width; cap at 1x
+    const scale = Math.min(Math.max(dimensions.width / 1200, 0.5), 1);
 
     return {
       width: Math.max(baseWidth * scale, minWidth),
@@ -220,17 +258,22 @@ const Map = () => {
                   <div key={i}>{line}</div>
                 ))}
               </div>
-              <div
-                style={{
-                  color: "#7861e3",
-                  fontSize: "0.9em",
-                  marginBottom: "16px",
-                }}
-              >
-                {marker.phoneNumber}
-              </div>
-              <button
-                onClick={() => handleClick(marker.link)}
+              {marker.phoneNumber && (
+                <div
+                  style={{
+                    color: "#7861e3",
+                    fontSize: "0.9em",
+                    marginBottom: "16px",
+                  }}
+                >
+                  {marker.phoneNumber}
+                </div>
+              )}
+              <a
+                href={marker.link}
+                target="_parent"
+                rel="noopener noreferrer"
+                className="cta"
                 style={{
                   backgroundColor: "#7861e3",
                   color: "white",
@@ -241,17 +284,20 @@ const Map = () => {
                   fontWeight: "600",
                   fontSize: "0.9em",
                   fontFamily: "'Figtree', sans-serif",
+                  textDecoration: "none",
+                  display: "inline-block",
                   transition: "transform 0.2s ease",
                 }}
-                onMouseEnter={(e) => e.target.style.transform = "scale(1.05)"}
-                onMouseLeave={(e) => e.target.style.transform = "scale(1)"}
               >
                 Find out more
-              </button>
+              </a>
             </div>
           )}
           <div
             className="marker"
+            role="button"
+            tabIndex={0}
+            aria-label={marker.country}
             style={{
               position: "absolute",
               top: marker.top,
@@ -269,23 +315,43 @@ const Map = () => {
                 boxShadow: "0 0 10px rgba(120, 97, 227, 0.5)",
               }),
             }}
-            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseEnter={() => {
+              isTouchRef.current = false;
+              setHoveredIndex(index);
+            }}
             onMouseLeave={() => setHoveredIndex(null)}
-            onClick={() => handleClick(marker.link)}
+            onTouchStart={() => {
+              isTouchRef.current = true;
+              if (hoveredIndex !== index) {
+                setHoveredIndex(index);
+              }
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                handleClick(marker.link);
+              }
+            }}
+            onClick={() => {
+              if (isTouchRef.current && hoveredIndex !== index) {
+                // First tap shows tooltip; second tap navigates
+                return;
+              }
+              handleClick(marker.link);
+            }}
           />
         </div>
       ))}
       <style>
         {`
           @keyframes fadeIn {
-            from {
-              opacity: 0;
-              transform: translate(-50%, -120px);
-            }
-            to {
-              opacity: 1;
-              transform: translate(-50%, -130px);
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+
+          .cta:hover, .cta:focus {
+            transform: scale(1.05);
+            outline: none;
           }
         `}
       </style>
