@@ -164,6 +164,7 @@ const Map = () => {
       }
     } catch {
       // keep default
+      setBaseUrl("https://tsl-projects.webflow.io");
     }
   }, []);
 
