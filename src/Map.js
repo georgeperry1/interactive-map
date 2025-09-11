@@ -147,6 +147,31 @@ const Map = () => {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const containerRef = React.useRef(null);
   const isTouchRef = React.useRef(false);
+  const [baseUrl, setBaseUrl] = useState("https://tslprojects.com");
+
+  // Determine base URL from the embedding parent (via document.referrer)
+  React.useEffect(() => {
+    try {
+      const ref = document.referrer;
+      if (ref) {
+        const u = new URL(ref);
+        const host = u.host.toLowerCase();
+        if (host.endsWith("tslprojects.com")) {
+          setBaseUrl("https://tslprojects.com");
+        } else if (host.endsWith("tsl-projects.webflow.io")) {
+          setBaseUrl("https://tsl-projects.webflow.io");
+        }
+      }
+    } catch {
+      // keep default
+    }
+  }, []);
+
+  const resolveUrl = (pathOrUrl) => {
+    if (/^https?:\/\//i.test(pathOrUrl)) return pathOrUrl;
+    const p = pathOrUrl.startsWith("/") ? pathOrUrl : `/${pathOrUrl}`;
+    return `${baseUrl}${p}`;
+  };
 
   React.useEffect(() => {
     const updateDimensions = () => {
@@ -167,10 +192,12 @@ const Map = () => {
   const handleClick = (path) => {
     // Prefer navigating the parent context so the parent origin resolves the path
     try {
-      window.open(path, "_parent");
+      const url = resolveUrl(path);
+      window.open(url, "_parent");
     } catch {
       // Fallback to same-context navigation
-      window.location.assign(path);
+      const url = resolveUrl(path);
+      window.location.assign(url);
     }
   };
 
@@ -269,11 +296,11 @@ const Map = () => {
                   {marker.phoneNumber}
                 </div>
               )}
-              <a
-                href={marker.link}
-                target="_parent"
-                rel="noopener noreferrer"
-                className="cta"
+                <a
+                  href={resolveUrl(marker.link)}
+                  target="_parent"
+                  rel="noopener noreferrer"
+                  className="cta"
                 style={{
                   backgroundColor: "#7861e3",
                   color: "white",
