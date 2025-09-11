@@ -113,7 +113,7 @@ const markers = [
     country: "Sweden",
     address: "TSL Sweden AB\nCO Spaces,\nHammarbybacken 27,\nJohanneshov,\nStockholm 120 30",
     phoneNumber: "",
-    link: "/countries/sweden",
+    link: "/countries/nordics",
   },
   {
     top: "26.5%",
@@ -121,7 +121,7 @@ const markers = [
     country: "Denmark",
     address: "TSL Denmark ApS\nBusiness Centre Nord,\nLyngbyvej 20,\nCopenhagen 2100",
     phoneNumber: "",
-    link: "/countries/denmark",
+    link: "/countries/nordics",
   },
   {
     top: "23.7%",
@@ -129,7 +129,7 @@ const markers = [
     country: "Norway",
     address: "TSL Norway AS\nInnovation Dock,\nRadhusgata 6,\n4306 Sandnes,\nNorway",
     phoneNumber: "",
-    link: "/countries/norway",
+    link: "/countries/nordics",
   }
 ,
   {
