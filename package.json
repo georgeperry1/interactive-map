@@ -17,6 +17,7 @@
     "gh-pages": "^6.3.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d docs",
     "start": "react-scripts start",
     "build": "BUILD_PATH='./docs' react-scripts build",
