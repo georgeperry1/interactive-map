@@ -15,16 +15,17 @@ const markers = [
     left: "19.6%",
     country: "USA",
     address:
-      "TSL Projects Inc,\n511 E John W Carpenter F Way,\n#409A\nIrving, Dallas\nTX 75062",
-    phoneNumber: "+1 382-342-2676",
+      "TSL Projects Inc.\n3131 Turtle Creek Blvd\nSuite 850\nDallas, TX 75219\nUSA",
+    phoneNumber: "+1-289-313-4577",
     link: "/countries/north-america",
   },
   {
     top: "33.5%",
     left: "25.5%",
     country: "Canada",
-    address: "TSL Inc. Toronto\n3509 Mainway\nBurlington\nON L7M 1A9\nCanada",
-    phoneNumber: "+1 382-342-2676",
+    address:
+      "TSL Projects Canada Inc.\n5515 North Service Rd\nSuite 200\nBurlington, ON L7L 6G4\nCanada",
+    phoneNumber: "+1-289-313-4577",
     link: "/countries/north-america",
   },
   {
@@ -60,7 +61,7 @@ const markers = [
     country: "Poland",
     address:
       "TSL Sp. z o. o.\nFirst Floor\nG43 Office Centre\nGrzybowska 43\n00-855 Warsaw\nMazowieckie\nPoland",
-    phoneNumber: "+48 (0) 503 940 490",
+    phoneNumber: "+48 665 299 910",
     link: "/countries/poland",
   },
   {
@@ -85,7 +86,7 @@ const markers = [
     top: "37.2%",
     left: "47%",
     country: "Spain",
-    address: "TSL SL\nBahía de Pollensa 5-7\n28042\nMadrid\nSpain",
+    address: "TSL SL\nGlorieta Mar Caribe 1, 1º Izq\n28043\nMadrid\nSpain",
     phoneNumber: "+34 91 340 44 66",
     link: "/countries/spain",
   },
@@ -94,8 +95,8 @@ const markers = [
     left: "45.7%",
     country: "Portugal",
     address:
-      "Av. D. João II,\nLote 1.07.2.1,\nPiso 0,\n1990-096 Lisboa -Parque das Nações",
-    phoneNumber: "",
+      "TSL IBP LDA\nEdf. Mar do Oriente\nRua do Mar Vermelho,\nN.º 2, Porta 61, 2º Piso,\nEsc. 2.1\n1990-152 Lisboa",
+    phoneNumber: "+351 211 354 270",
     link: "/countries/portugal",
   },
   {
@@ -103,8 +104,8 @@ const markers = [
     left: "90.2%",
     country: "APAC",
     address:
-      "TSL Australia Pty Ltd\nOffice 529, Level 5\n7 Eden Park Drive\nMacquarie Park\nNorth Ryde\nSydney\nNew South Wales, 2113, Australia",
-    phoneNumber: "+44 (0) 845 330 7311",
+      "TSL Projects Australia Pty Ltd\nSuite 1.02, Level 1\n2 Lyonpark Road\nMacquarie Park,\nSydney,\nNew South Wales,\n2113,\nAustralia",
+    phoneNumber: "+61 2 9188 1567",
     link: "/countries/apac",
   },
   {
@@ -136,7 +137,7 @@ const markers = [
     top: "30.8%",
     left: "53%",
     country: "Austria",
-    address: "TSL Austria GmbH\nOffice 2165, Spaces\nSquare One,\nLeopold Ungar Platz 2, 1.Stock - Stiege 2,\nVienna 1190\nAustria",
+    address: "TSL GmbH Austria\nOffice 2165, Spaces\nSquare One,\nLeopold Ungar Platz 2, 1.Stock - Stiege 2,\nVienna 1190\nAustria",
     phoneNumber: "",
     link: "/countries/austria",
   }
