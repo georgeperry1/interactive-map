@@ -20,15 +20,6 @@ const markers = [
     link: "/countries/north-america",
   },
   {
-    top: "33.5%",
-    left: "25.5%",
-    country: "Canada",
-    address:
-      "TSL Projects Canada Inc.\n5515 North Service Rd\nSuite 200\nBurlington, ON L7L 6G4\nCanada",
-    phoneNumber: "+1-289-313-4577",
-    link: "/countries/north-america",
-  },
-  {
     top: "29.3%",
     left: "47.7%",
     country: "United Kingdom",
