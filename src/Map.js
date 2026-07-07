@@ -95,7 +95,16 @@ const markers = [
     left: "90.2%",
     country: "APAC",
     address:
-      "TSL Projects Australia Pty Ltd\nSuite 1.02, Level 1\n2 Lyonpark Road\nMacquarie Park,\nSydney,\nNew South Wales,\n2113,\nAustralia",
+      "TSL Projects Australia Pty Ltd - Sydney\nSuite 1.02, Level 1\n2 Lyonpark Road\nMacquarie Park,\nSydney,\nNew South Wales,\n2113,\nAustralia",
+    phoneNumber: "+61 2 9188 1567",
+    link: "/countries/apac",
+  },
+  {
+    top: "75%",
+    left: "80.5%",
+    country: "APAC",
+    address:
+      "TSL Projects Australia Pty Ltd - Perth\nLevel 29,\nThe Forrest Centre,\n221 St Georges Terrace,\nPerth,\nWA,\n6000,\nAustralia",
     phoneNumber: "+61 2 9188 1567",
     link: "/countries/apac",
   },
@@ -119,11 +128,20 @@ const markers = [
     top: "23.7%",
     left: "50.3%",
     country: "Norway",
-    address: "TSL Norway AS\nInnovation Dock,\nRadhusgata 6,\n4306 Sandnes,\nNorway",
+    address:
+      "TSL Norway AS\nOslo Office\nSpaces Nydalen,\nOffices 419-422, 4th Floor,\nNydalsveien 33, 0484 Oslo,\nNorway\n\nSandnes Office\nGrenseveien 21,\n4313 Sandnes,\nNorway",
     phoneNumber: "",
     link: "/countries/nordics",
-  }
-,
+  },
+  {
+    top: "23%",
+    left: "55%",
+    country: "Finland",
+    address:
+      "TSL Projects Finland OY\nKarhumäenkuja 2,\nAviabulevardi A2\n01530 Vantaa\nFinland",
+    phoneNumber: "",
+    link: "/countries/nordics",
+  },
   {
     top: "30.8%",
     left: "53%",
@@ -248,7 +266,10 @@ const Map = () => {
                 position: "absolute",
                 top: marker.top,
                 left: marker.left,
-                transform: "translate(-50%, -130px)",
+                transform:
+                  parseFloat(marker.top) > 50
+                    ? "translate(-50%, calc(-100% + 12px))"
+                    : "translate(-50%, -130px)",
                 fontFamily: "'Figtree', sans-serif",
                 backgroundColor: "white",
                 color: "black",
@@ -275,7 +296,7 @@ const Map = () => {
                 }}
               >
                 {marker.address.split("\n").map((line, i) => (
-                  <div key={i}>{line}</div>
+                  <div key={i}>{line || " "}</div>
                 ))}
               </div>
               {marker.phoneNumber && (
